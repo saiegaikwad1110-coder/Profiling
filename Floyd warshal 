@@ -1,0 +1,41 @@
+def floyd_warshall(graph):
+    """
+    Floyd-Warshall Algorithm for All-Pairs Shortest Paths.
+    :param graph: 2D adjacency matrix (list of lists), where
+                  graph[i][j] = weight of edge from i to j,
+                  or float('inf') if no edge exists.
+    :return: dist matrix with shortest path distances between all pairs.
+    """
+    # Number of vertices
+    V = len(graph)
+
+    # Initialize distance matrix as a copy of the graph
+    dist = [row[:] for row in graph]
+
+    # Dynamic programming update
+    for k in range(V):
+        for i in range(V):
+            for j in range(V):
+                if dist[i][k] + dist[k][j] < dist[i][j]:
+                    dist[i][j] = dist[i][k] + dist[k][j]
+
+    return dist
+
+
+# Example usage
+if __name__ == "__main__":
+    INF = float('inf')
+
+    # Graph represented as adjacency matrix
+    graph = [
+        [0,   3,  10, INF],
+        [INF, 0,   1,   2],
+        [INF, INF, 0,   4],
+        [INF, INF, INF, 0]
+    ]
+
+    dist = floyd_warshall(graph)
+
+    print("Shortest path matrix:")
+    for row in dist:
+        print(row)
