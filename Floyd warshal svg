@@ -1,0 +1,18 @@
+from graphviz import Digraph
+
+def visualize_graph(edges, filename="graph.svg"):
+    dot = Digraph(format="svg")
+    for u, v, w in edges:
+        dot.edge(str(u), str(v), label=str(w))
+    dot.render(filename, view=False)
+
+# Example usage
+edges = [
+    (0, 1, 3),
+    (0, 2, 10),
+    (1, 2, 1),
+    (1, 3, 2),
+    (2, 3, 4)
+]
+
+visualize_graph(edges)
