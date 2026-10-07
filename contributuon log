@@ -1,0 +1,20 @@
+
+# Contribution Log – Searching Algorithms
+
+**Name:** Saie Suresh Gaikwad
+**Language:** Python
+
+| Task          | Contribution                               |
+| ------------- | ------------------------------------------ |
+| Linear Search | Implemented and tested with AI assistance. |
+| Binary Search | Implemented and tested with AI assistance. |
+| Testing       | Tested Best, Average and Worst Cases.      |
+| Time Analysis | Used `time.perf_counter()`.                |
+| Documentation | Created README with AI assistance.         |
+
+### Learning
+
+Learned the working and time complexity of both searching algorithms.
+
+**Linear Search:** `O(1)` Best, `O(n)` Average/Worst
+**Binary Search:** `O(1)` Best, `O(log n)` Average/Worst
